@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&display=swap");
+
+/* @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap'); */
+/* font-family: 'Italianno', cursive; */
+
+*,
+html {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: "Cormorant Garamond", serif;
+}
+
+.content-container {
+     background-color: #faf8f8;
+     height: 100vh;
+}
