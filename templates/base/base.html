@@ -6,17 +6,24 @@
           <meta
                name="viewport"
                content="width=device-width, initial-scale=1.0" />
+          <link
+               rel="stylesheet"
+               href="{% static '/styles/base/initial_styles.css' %}" />
+
           <!-- CUSTOM HEADERS -->
-          <link rel="stylesheet" href="{% static '/styles/base/base.css' %}" />
+          {% include "./styles.html" %} {% include "./cdn.html" %}
+          <!-- END CUSTOM HEADER -->
           <title>{% block title%}{% endblock %}</title>
      </head>
      <body>
           <div class="content-container">
-               <div class="header-container">
+               <div class="header-container bg-light shadow-sm">
                     {% include '../partials/_header.html' %}
                </div>
-               <div class="main-content">{% block content %}{% endblock %}</div>
-               <footer class="footer-container">
+               <div class="main-content container pb-5">
+                    {% block content %}{% endblock %}
+               </div>
+               <footer class="footer-container fixed-bottom bg-light">
                     {% include '../partials/_footer.html' %}
                </footer>
           </div>

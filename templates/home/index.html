@@ -4,5 +4,39 @@
 <!--  -->
 
 {% block content %}
-<h1>Hello World</h1>
+<!--  -->
+<div class="row">
+     {% for recipe in data %}
+     <div class="col-md-3 mt-3 mb-3">
+          <div class="card h-100 shadow">
+               <img
+                    src="{{ recipe.recipe_image.url }}"
+                    class="card-img-top"
+                    alt="Image" />
+               <div class="card-body d-flex flex-column bg-warning">
+                    <h5 class="card-title fw-bold">{{ recipe.recipe_name }}</h5>
+                    <div class="description mb-2">
+                         <span class="fw-bolder" style="font-size: 18px">
+                              Description:
+                              <p class="card-text fw-semibold fst-italic">
+                                   {{ recipe.recipe_description }}
+                              </p>
+                         </span>
+                    </div>
+                    <div class="ingredients mb-2">
+                         <span class="fw-bolder" style="font-size: 18px">
+                              Ingredients:
+                              <p class="card-text fw-semibold fst-italic">
+                                   {{ recipe.recipe_ingredients }}
+                              </p>
+                         </span>
+                    </div>
+                    <a href="#" class="btn btn-success mt-auto">View</a>
+               </div>
+          </div>
+     </div>
+     {% endfor %}
+</div>
+
+<!--  -->
 {% endblock %}
