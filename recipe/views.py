@@ -13,5 +13,19 @@ class HomeView(View):
 
         return render(request, 'home/index.html', context)
     
-    def post(self, request):
-        pass
+class RecipeView(View):
+    def get(self, request, id):
+
+        qs = Recipe.objects.get(id=id)
+
+        context = {
+            'data' : qs,
+            'ingredients': qs.recipe_ingredients.split(','),
+        }
+
+        return render(request, 'recipe/recipe.html', context)
+    
+
+class AboutView(View):
+    def get(self, request):
+        return render(request, 'about/about.html')

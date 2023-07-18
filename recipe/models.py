@@ -9,6 +9,7 @@ class Recipe(models.Model):
        recipe_image = models.ImageField(upload_to=fileName, blank=True, null=True)
        recipe_description = models.CharField(max_length=500)
        recipe_ingredients = models.CharField(max_length=500)
+       recipe_instructions = models.TextField(max_length=1000, null=True, blank=True)
        date_created = models.DateTimeField(auto_now_add=True)
 
        def __str__(self):

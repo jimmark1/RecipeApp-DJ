@@ -1,0 +1,29 @@
+{% extends '../base/base.html' %}
+<!--  -->
+{% block title %} {{ data.recipe_name }} {% endblock %}
+<!--  -->
+
+{% block content %}
+<div class="row mb-5">
+     <div class="col-lg text-center">
+          <img
+               class="img-fluid"
+               src="{{data.recipe_image.url}}"
+               alt="recipe_image" />
+     </div>
+     <div class="col-lg">
+          <div class="mt-3">
+               <h3 class="fw-bold">Ingredients</h3>
+               {% for ingredient in ingredients %}
+               <span class="badge bg-primary fs-5 mt-3 fw-light"
+                    >{{ ingredient }}</span
+               >
+               {% endfor %}
+          </div>
+          <div class="mt-3">
+               <h3 class="fw-bold">How to Cook</h3>
+               <p style="font-size: 18px">{{ data.recipe_instructions }}</p>
+          </div>
+     </div>
+</div>
+{% endblock %}
